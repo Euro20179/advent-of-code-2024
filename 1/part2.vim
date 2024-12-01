@@ -1,12 +1,12 @@
-#!/bin/nvim -S
+"#!/bin/nvim -S
 "score -2
 
 read ./puzzle1
 
-let count = 0
-g/^\d/let count += expand("<cword>") *
+let cnt = 0
+g/^\d/let cnt += expand("<cword>") *
             \ searchcount(#{pattern: '\s\+' .. expand("<cword>")}).total
 
-echo count .. "\n"
+echo cnt .. "\n"
 
-w! ./puzzle1.editing | q
+w! ./puzzle1.editing
