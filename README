@@ -26,3 +26,7 @@ as apposed to just using basic functions and for loops
     for each range/address used add 1 point
         eg: `2,3s/a/b/`
         eg: `%s/a/b/`
+
+    Combining lines is only allowed if the ideas are related,
+    eg: `w | q` saves and exits
+    `let x = 3 | 1d` do 2 completely different things, and is disallowed
