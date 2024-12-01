@@ -1,0 +1,28 @@
+───────────────────────────────────── Aoc ─────────────────────────────────────
+
+I wanted try doing aoc in viml this year because viml is fun.
+And you can do some crazy stuff,
+
+I've devised a poing system to encourage the use of text editing commands
+as apposed to just using basic functions and for loops
+
+== Challenge
+
+    The challenge will be to do it in as few readable lines as possible.
+    a "readable line" is a line that is < 80 chars.
+    Line
+        \\ continutations, count as 2 lines
+
+== Point system
+
+    For every line subtract 1 point
+    For every ex command that exists [here] | https://www.gnu.org/software/emacs/manual/html_node/vip/Ex-Command-Reference.html |
+        Add 1 point
+        Using an old ex command in a non-old ex command does not count
+            eg: `execute p`
+        using an old ex command within an old ex command counts as 1 point
+            eg: `g/hi/p`
+
+    for each range/address used add 1 point
+        eg: `2,3s/a/b/`
+        eg: `%s/a/b/`
