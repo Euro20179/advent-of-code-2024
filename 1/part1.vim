@@ -1,8 +1,7 @@
 #!/bin/nvim -S
 "score -2
 
-!cp ./puzzle1 ./puzzle1.editing
-e ./puzzle1.editing
+read ./puzzle1
 
 1,$sort
 let row1 = []
@@ -17,4 +16,4 @@ let dist = 0
 g/^\d/let dist += expand("<cword>")
 
 echo dist .. "\n"
-w | q!
+w! ./puzzle1.editing | q!

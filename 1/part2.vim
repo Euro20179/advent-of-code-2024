@@ -1,5 +1,5 @@
 #!/bin/nvim -S
-"score -3
+"score -2
 
 read ./puzzle1
 
@@ -9,5 +9,4 @@ g/^\d/let count += expand("<cword>") *
 
 echo count .. "\n"
 
-w! ./puzzle1.editing
-q
+w! ./puzzle1.editing | q
