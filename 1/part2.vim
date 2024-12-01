@@ -1,5 +1,5 @@
 #!/bin/nvim -S
-"score -6
+"score -3
 
 read ./puzzle1
 
