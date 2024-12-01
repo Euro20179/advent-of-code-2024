@@ -1,7 +1,6 @@
-"score -1
+"score 0
 
-!cp ./puzzle1 ./puzzle1.editing
-e ./puzzle1.editing
+read ./puzzle1
 
 1,$sort
 let row1 = []
@@ -15,3 +14,5 @@ $a|---ANSWER---
 0
 .
 1,$-1g/^\d/call setline("$", str2nr(getline("$")) + str2nr(expand("<cword>")))
+
+w! ./puzzle1.editing
