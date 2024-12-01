@@ -1,6 +1,6 @@
-"score 0
+"score 2
 
-read ./puzzle1
+read ./puzzle1 | 1d
 
 1,$sort
 let row1 = []
