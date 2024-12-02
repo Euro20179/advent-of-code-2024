@@ -1,5 +1,5 @@
 read ./input
-1d
+$d
 
 fun s:checkLine(data)
     let increasing = 1

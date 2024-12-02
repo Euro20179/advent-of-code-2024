@@ -1,40 +1,27 @@
-"score: -29
+"score: -17
 read ./input
 1d
 
-let i = 1
-for line in getline("1", "$")
-    let data = split(line, " ")
-    let last = str2nr(data[0])
+fun CkLine(line)
+    let data = split(a:line, " ")->map('str2nr(v:val)')
+    let last = data[0]
 
-    let inc = str2nr(data[1]) > last ? 'inc' : 'dec'
-
-    let success = v:true
+    let inc = data[1] > last ? 'inc' : 'dec'
 
     for nr in data[1:]
-        let n = str2nr(nr)
-        let diff = n - last
-
-        if inc ==# 'dec' | let diff *= -1 | endif
+        let n = nr
+        let diff = inc ==# 'dec' ? last - n : n - last
 
         if diff <= 0 || diff > 3
-            let success = v:false
-            break
+            return v:false
         endif
 
         let last = n
     endfor
 
-    call setline(i, line .. ' ' .. success)
+    return v:true
+endfun
 
-    let i += 1
-endfor
-
-redir => count
-%s/true//n
-redir END
-
-call feedkeys("\<CR>")
-
-call append("$", count)
-norm! G0xelDO---ANS---
+%s/^.*$/\=CkLine(submatch(0)) ? '1 +' : '0 +'
+%join
+1!sed 's/+$//' | bc
