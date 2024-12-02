@@ -1,4 +1,4 @@
-"score 2
+"score 1
 
 read ./puzzle1 | 1d
 
