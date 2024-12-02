@@ -1,5 +1,5 @@
 "#!/bin/nvim -S
-"score 1
+"score 3
 
 r ./puzzle1
 
@@ -27,9 +27,8 @@ let @q = ":let @a = \"\"\n:g//let @A = expand(\"<cword>\")
 %s/\zs\d\+\ze /&+/g
 %join
 
-"remove the trailing plus
-s/+\s*$//
-call setline(".", eval(getline(".")))
+"remove the trailing plus and add up the numbers
+.!sed 's/+ $//' | bc
 
 ""skips the hit-enter prompt that happens after `:d`, etc
 call feedkeys("\<CR>")
